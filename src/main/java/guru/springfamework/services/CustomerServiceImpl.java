@@ -74,14 +74,13 @@ public class CustomerServiceImpl implements CustomerService {
         Optional<Customer> customer = customerRepository.findById(id);
 
         if (customer.isPresent()){
-            if (customerDTO.getFirstName() == null){
-                customerDTO.setFirstName(customer.get().getFirstName());
+            if (customerDTO.getFirstName() != null){
+                customer.get().setFirstName(customerDTO.getFirstName());
             }
-            if (customerDTO.getLastName() == null){
-                customerDTO.setLastName(customer.get().getLastName());
+            if (customerDTO.getLastName() != null){
+                customer.get().setLastName(customerDTO.getLastName());
             }
-
-            Customer patchCustomer = customerRepository.save(customerMapper.customerDTOToCustomer(customerDTO));
+            Customer patchCustomer = customerRepository.save(customer.get());
 
             CustomerDTO patchDTO = customerMapper.customerToCustomerDTO(patchCustomer);
 
