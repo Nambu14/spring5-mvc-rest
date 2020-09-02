@@ -93,4 +93,9 @@ public class CustomerServiceImpl implements CustomerService {
             throw new RuntimeException("Customer ID Not found");
         }
     }
+
+    @Override
+    public void deleteCustomerById(Long id) {
+        customerRepository.deleteById(id);
+    }
 }
