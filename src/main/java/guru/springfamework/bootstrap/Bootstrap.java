@@ -46,7 +46,7 @@ public class Bootstrap implements CommandLineRunner {
 
 
         Customer turco = new Customer();
-        turco.setFirstName("Carlos");
+        turco.setFirstName("Turco");
         turco.setLastName("Menem");
 
         Customer chupete = new Customer();
@@ -54,7 +54,7 @@ public class Bootstrap implements CommandLineRunner {
         chupete.setLastName("De La Rua");
 
         Customer tortuga = new Customer();
-        tortuga.setFirstName("Arturo");
+        tortuga.setFirstName("Tortuga");
         tortuga.setLastName("Illia");
 
         customerRepository.save(turco);
